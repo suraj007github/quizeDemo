@@ -1,4 +1,5 @@
-package com.user;
+
+package co.welcomepages;
 import java.sql.Connection;
 	import java.sql.PreparedStatement;
 	import java.sql.SQLException;
@@ -6,23 +7,15 @@ import java.sql.Connection;
 
 public class UserInterface01 {
 
-
-	
-
-
 	Connection connection =null;
 	PreparedStatement ps=null;
 
-
 	public  void getDetails( String firstname, String lastname, String username, String passward, String mailid, String city, String mibilnum) throws SQLException {
 		
-
-
 	try {
 		Connect cp=new Connect();
 		Connection connection= cp.getconnectionDetails();
-		
-		
+			
 		ps=connection.prepareStatement("insert into quizedemo(firstname,lastname,username,passward,mailid,city,mibilenum)"+ "values(?,?,?,?,?,?,?)");
 		ps.setString(1,firstname );
 		ps.setString(2,lastname);
@@ -33,19 +26,15 @@ public class UserInterface01 {
 		ps.setString(7,mibilnum);
 		int i=ps.executeUpdate();connection.close();
 		ps.close();
-	//}
+	
 		System.out.println("Record inserted"+i);
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
-	//finally {
-		
-
-
-		
-
+	
+	
 	}
-	public static void main(String args[]) throws SQLException {
+	public static void registered() throws SQLException {
 		 
 		Scanner sc =new Scanner(System.in);
 		System.out.println("Enter id");
@@ -59,7 +48,7 @@ public class UserInterface01 {
 	System.out.println("Enter username");
 	String username=sc.next();
 	
-	System.out.println("Enter passward");
+	System.out.println("Enter password");
 	String passward=sc.next();
 	
 	System.out.println("Enter mail id");

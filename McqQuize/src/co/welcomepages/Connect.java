@@ -1,4 +1,4 @@
-package com.user;
+package co.welcomepages;
 
 import java.sql.Connection;
 	import java.sql.DriverManager;
@@ -23,7 +23,6 @@ public class Connect {
 				
 				
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return connection ;
